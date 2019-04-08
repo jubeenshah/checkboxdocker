@@ -5,15 +5,16 @@ MAINTAINER Jubeen Shah <jubeen@jubeenshah.com>
 ENV MONGODB_ADMIN_USER admin
 ENV MONGODB_ADMIN_PASS admin
 
-EXPOSE 3002 3002
+EXPOSE 27017 27017
 
 ADD runMongo.sh /runMongo.sh
 ADD setPassword.sh /setPassword.sh
+ADD run.sh /run.sh
 
 RUN chmod +x /runMongo.sh
 RUN chmod +x /setPassword.sh
 
-CMD ["/runMongo.sh"]
+#CMD ["/runMongo.sh"]
 
 RUN apt-get update && apt-get install -y git curl docker nginx
 
@@ -35,6 +36,7 @@ RUN npm install cors
 COPY default /etc/nginx/sites-enabled/default
 COPY startCheckbox.sh startCheckbox.sh
 RUN chmod +x startCheckbox.sh
-ENTRYPOINT sh startCheckbox.sh
+RUN chmod +x run.sh
+ENTRYPOINT sh run.sh
 
 

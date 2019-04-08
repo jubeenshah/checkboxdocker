@@ -9,7 +9,7 @@ export MONGO_PASSWORD=admin
 echo "Mongo port" 
 export MONGO_PORT=3002
 echo "Monog IP" 
-export MONGO_IP=mongo
+export MONGO_IP=localhost
 echo "Mongo Mail User" 
 export MAIL_USER=admin
 echo  "Mongo Mail Password" 

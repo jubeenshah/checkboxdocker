@@ -1,0 +1,11 @@
+version: '3.0'
+services:
+  monogdb:
+    build: ../test
+    ports:
+     - "4000:80"
+    #build: ../checkbox 
+  #checkbox:
+  #  image: "jubeenshah/testcheckbox:v1.0"
+  #  ports: 
+  #   - "4000:80"
